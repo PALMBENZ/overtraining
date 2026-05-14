@@ -1,0 +1,835 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Overtraining — Organisme de formation certifié Qualiopi | www.overtraining.net</title>
+<meta name="description" content="Overtraining est un organisme de formation certifié Qualiopi. Plus de 20 ans d'expérience en management, communication, réparabilité, sécurité, bureautique. Formations sur-mesure, finançables OPCO/CPF.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --primary:#0B3D91;
+    --primary-dark:#062a66;
+    --primary-light:#3563c9;
+    --accent:#F5A623;
+    --accent-dark:#d68d12;
+    --text:#1a2233;
+    --text-muted:#5b6679;
+    --bg:#ffffff;
+    --bg-soft:#f5f7fb;
+    --bg-card:#ffffff;
+    --border:#e3e8f0;
+    --shadow-sm:0 2px 6px rgba(11,61,145,.06);
+    --shadow-md:0 8px 24px rgba(11,61,145,.10);
+    --shadow-lg:0 16px 40px rgba(11,61,145,.14);
+    --radius:14px;
+    --radius-sm:8px;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,Segoe UI,sans-serif;color:var(--text);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+  h1,h2,h3,h4{font-family:'Poppins','Inter',sans-serif;font-weight:700;line-height:1.25;color:var(--text)}
+  a{color:var(--primary);text-decoration:none}
+  a:hover{color:var(--primary-dark)}
+  img{max-width:100%;display:block}
+  .container{max-width:1200px;margin:0 auto;padding:0 24px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;border-radius:999px;font-weight:600;font-size:15px;transition:all .2s;cursor:pointer;border:none;font-family:inherit}
+  .btn-primary{background:var(--accent);color:#fff;box-shadow:var(--shadow-sm)}
+  .btn-primary:hover{background:var(--accent-dark);transform:translateY(-2px);box-shadow:var(--shadow-md);color:#fff}
+  .btn-secondary{background:transparent;color:#fff;border:2px solid rgba(255,255,255,.7)}
+  .btn-secondary:hover{background:rgba(255,255,255,.15);color:#fff}
+  .btn-outline{background:transparent;color:var(--primary);border:2px solid var(--primary)}
+  .btn-outline:hover{background:var(--primary);color:#fff}
+
+  /* HEADER */
+  header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,.96);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+  nav{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:22px;font-family:'Poppins',sans-serif;color:var(--primary)}
+  .logo-mark{width:38px;height:38px;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);border-radius:10px;display:grid;place-items:center;color:#fff;font-weight:800}
+  .logo-mark span{font-size:18px}
+  .nav-links{display:flex;gap:28px;align-items:center;list-style:none}
+  .nav-links a{color:var(--text);font-weight:500;font-size:15px;transition:color .2s}
+  .nav-links a:hover{color:var(--primary)}
+  .nav-cta{padding:10px 22px;background:var(--primary);color:#fff;border-radius:999px;font-weight:600;font-size:14px}
+  .nav-cta:hover{background:var(--primary-dark);color:#fff}
+  .menu-toggle{display:none;background:none;border:none;cursor:pointer;font-size:24px;color:var(--primary)}
+
+  /* HERO */
+  .hero{position:relative;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);color:#fff;padding:90px 0 110px;overflow:hidden}
+  .hero::after{content:"";position:absolute;bottom:-1px;left:0;right:0;height:80px;background:linear-gradient(to top,var(--bg) 0%,transparent 100%);pointer-events:none}
+  .hero-bg-pattern{position:absolute;inset:0;opacity:.08;background-image:radial-gradient(circle at 20% 50%,#fff 1px,transparent 1px),radial-gradient(circle at 80% 20%,#fff 1px,transparent 1px);background-size:60px 60px}
+  .hero-content{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .hero-text h1{font-size:clamp(34px,4.5vw,56px);color:#fff;letter-spacing:-.02em;margin-bottom:20px}
+  .hero-text h1 .hl{color:var(--accent);position:relative;white-space:nowrap}
+  .hero-text p{font-size:18px;opacity:.92;margin-bottom:32px;max-width:540px}
+  .hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-badges{display:flex;gap:24px;margin-top:36px;flex-wrap:wrap}
+  .hero-badge{display:flex;align-items:center;gap:10px;font-size:14px;opacity:.9}
+  .hero-badge svg{flex-shrink:0;color:var(--accent)}
+  .hero-card{background:rgba(255,255,255,.08);backdrop-filter:blur(10px);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:32px;color:#fff}
+  .hero-card h3{color:#fff;font-size:20px;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .hero-stat{display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid rgba(255,255,255,.12);font-size:15px}
+  .hero-stat:last-child{border-bottom:none}
+  .hero-stat strong{font-weight:700;color:var(--accent);font-size:18px}
+
+  /* SECTIONS */
+  section{padding:90px 0}
+  .section-head{text-align:center;max-width:720px;margin:0 auto 56px}
+  .section-eyebrow{display:inline-block;color:var(--primary);font-weight:600;font-size:13px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+  .section-head h2{font-size:clamp(28px,3.5vw,42px);margin-bottom:14px;letter-spacing:-.01em}
+  .section-head p{color:var(--text-muted);font-size:17px}
+
+  /* WHY US */
+  #why{background:var(--bg-soft)}
+  .features{display:grid;grid-template-columns:repeat(4,1fr);gap:24px}
+  .feature{background:#fff;padding:32px 26px;border-radius:var(--radius);box-shadow:var(--shadow-sm);transition:all .25s}
+  .feature:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .feature-icon{width:54px;height:54px;border-radius:12px;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);display:grid;place-items:center;color:#fff;margin-bottom:18px}
+  .feature h3{font-size:18px;margin-bottom:8px}
+  .feature p{color:var(--text-muted);font-size:14px}
+
+  /* CATEGORIES */
+  .category-filters{display:flex;justify-content:center;flex-wrap:wrap;gap:10px;margin-bottom:48px}
+  .cat-btn{padding:9px 20px;border-radius:999px;background:#fff;border:1.5px solid var(--border);color:var(--text);font-weight:500;font-size:14px;cursor:pointer;transition:all .2s;font-family:inherit}
+  .cat-btn:hover{border-color:var(--primary);color:var(--primary)}
+  .cat-btn.active{background:var(--primary);color:#fff;border-color:var(--primary)}
+
+  .courses{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .course{background:var(--bg-card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:all .25s;display:flex;flex-direction:column;position:relative}
+  .course:hover{transform:translateY(-4px);box-shadow:var(--shadow-md);border-color:rgba(11,61,145,.3)}
+  .course-tag{position:absolute;top:18px;right:18px;background:rgba(11,61,145,.92);color:#fff;font-size:11px;font-weight:600;padding:4px 10px;border-radius:999px;letter-spacing:.04em;text-transform:uppercase;backdrop-filter:blur(6px)}
+  .course-banner{height:120px;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);display:grid;place-items:center;color:rgba(255,255,255,.85);font-size:42px;font-weight:800;font-family:'Poppins',sans-serif;letter-spacing:.05em;position:relative;overflow:hidden}
+  .course-banner::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 30% 30%,rgba(255,255,255,.15),transparent 60%)}
+  .banner-mgt{background:linear-gradient(135deg,#0B3D91 0%,#3563c9 100%)}
+  .banner-com{background:linear-gradient(135deg,#1976d2 0%,#42a5f5 100%)}
+  .banner-rep{background:linear-gradient(135deg,#0d8a4f 0%,#26b97a 100%)}
+  .banner-tech{background:linear-gradient(135deg,#c62828 0%,#e57373 100%)}
+  .banner-bur{background:linear-gradient(135deg,#5e35b1 0%,#9575cd 100%)}
+  .banner-lng{background:linear-gradient(135deg,#ef6c00 0%,#ffb74d 100%)}
+  .banner-base{background:linear-gradient(135deg,#00838f 0%,#4dd0e1 100%)}
+  .banner-ven{background:linear-gradient(135deg,#ad1457 0%,#ec407a 100%)}
+  .course-body{padding:24px;display:flex;flex-direction:column;flex:1}
+  .course-cat{color:var(--primary);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px}
+  .course h3{font-size:18px;margin-bottom:10px;line-height:1.35}
+  .course-desc{color:var(--text-muted);font-size:14px;margin-bottom:18px;flex:1}
+  .course-meta{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:18px}
+  .meta-pill{font-size:12px;padding:4px 10px;background:var(--bg-soft);border-radius:999px;color:var(--text-muted);display:inline-flex;align-items:center;gap:5px}
+  .course-link{color:var(--primary);font-weight:600;font-size:14px;display:inline-flex;align-items:center;gap:6px;border:none;background:none;cursor:pointer;padding:0;font-family:inherit}
+  .course-link:hover{gap:10px}
+
+  /* ABOUT */
+  #about{background:var(--bg-soft)}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+  .about-text h2{margin-bottom:18px;font-size:clamp(28px,3.2vw,38px)}
+  .about-text > p{color:var(--text-muted);margin-bottom:18px}
+  .about-list{list-style:none;margin-top:24px}
+  .about-list li{display:flex;gap:14px;margin-bottom:14px;align-items:flex-start}
+  .about-list svg{flex-shrink:0;color:var(--primary);margin-top:3px}
+  .about-list strong{display:block;color:var(--text);margin-bottom:2px}
+  .about-list span{color:var(--text-muted);font-size:14px}
+  .qualiopi-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px;box-shadow:var(--shadow-sm)}
+  .qualiopi-badge{display:inline-flex;align-items:center;gap:10px;background:linear-gradient(135deg,#0B3D91 0%,#3563c9 100%);color:#fff;padding:10px 18px;border-radius:999px;font-weight:700;font-size:14px;margin-bottom:18px;letter-spacing:.04em}
+  .qualiopi-card h3{font-size:22px;margin-bottom:14px}
+  .qualiopi-list{list-style:none;margin-top:18px}
+  .qualiopi-list li{padding:10px 0;border-bottom:1px dashed var(--border);font-size:14px;color:var(--text-muted);display:flex;align-items:flex-start;gap:10px}
+  .qualiopi-list li:last-child{border-bottom:none}
+  .qualiopi-list .check{color:#0d8a4f;flex-shrink:0;margin-top:2px}
+
+  /* TEAM */
+  .team-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+  .team-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:32px 26px;text-align:center;transition:all .25s}
+  .team-card:hover{transform:translateY(-4px);box-shadow:var(--shadow-md)}
+  .team-avatar{width:96px;height:96px;border-radius:50%;background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);display:grid;place-items:center;color:#fff;font-size:32px;font-weight:700;margin:0 auto 18px;font-family:'Poppins',sans-serif}
+  .team-card h3{font-size:18px;margin-bottom:6px}
+  .team-role{color:var(--primary);font-weight:600;font-size:14px;margin-bottom:12px}
+  .team-bio{color:var(--text-muted);font-size:14px}
+
+  /* PROCESS */
+  #process{background:linear-gradient(180deg,#fff 0%,var(--bg-soft) 100%)}
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;position:relative}
+  .step{text-align:center;padding:24px;background:#fff;border-radius:var(--radius);border:1px solid var(--border);position:relative}
+  .step-num{width:48px;height:48px;border-radius:50%;background:var(--primary);color:#fff;font-weight:800;font-size:20px;display:grid;place-items:center;margin:0 auto 16px;font-family:'Poppins',sans-serif}
+  .step h3{font-size:17px;margin-bottom:8px}
+  .step p{color:var(--text-muted);font-size:14px}
+
+  /* CTA */
+  .cta-band{background:linear-gradient(135deg,var(--primary) 0%,var(--primary-light) 100%);color:#fff;text-align:center;padding:70px 0;position:relative;overflow:hidden}
+  .cta-band::before{content:"";position:absolute;inset:0;opacity:.08;background-image:radial-gradient(circle at 20% 50%,#fff 1px,transparent 1px);background-size:48px 48px}
+  .cta-band h2{color:#fff;font-size:clamp(28px,3.5vw,40px);margin-bottom:12px;position:relative}
+  .cta-band p{font-size:18px;opacity:.92;margin-bottom:32px;position:relative}
+  .cta-band .btn-primary{position:relative}
+
+  /* CONTACT */
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start}
+  .contact-info h3{font-size:24px;margin-bottom:16px}
+  .contact-info p{color:var(--text-muted);margin-bottom:28px}
+  .contact-items{list-style:none}
+  .contact-items li{display:flex;gap:18px;padding:18px 0;border-bottom:1px solid var(--border);align-items:center}
+  .contact-icon{width:48px;height:48px;border-radius:12px;background:rgba(11,61,145,.08);color:var(--primary);display:grid;place-items:center;flex-shrink:0}
+  .contact-items strong{display:block;color:var(--text);font-weight:600;font-size:14px;margin-bottom:2px}
+  .contact-items a, .contact-items span{color:var(--text-muted);font-size:15px}
+  .contact-items a:hover{color:var(--primary)}
+  .contact-form{background:var(--bg-soft);border-radius:var(--radius);padding:36px}
+  .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+  .form-group{margin-bottom:16px}
+  .form-group.full{grid-column:1/-1}
+  .form-group label{display:block;font-weight:600;font-size:13px;margin-bottom:6px;color:var(--text)}
+  .form-group input, .form-group select, .form-group textarea{width:100%;padding:12px 14px;border:1.5px solid var(--border);border-radius:var(--radius-sm);font-family:inherit;font-size:14px;background:#fff;transition:border-color .2s}
+  .form-group input:focus, .form-group select:focus, .form-group textarea:focus{outline:none;border-color:var(--primary)}
+  .form-group textarea{resize:vertical;min-height:110px}
+
+  /* FOOTER */
+  footer{background:#0a1a3a;color:rgba(255,255,255,.75);padding:60px 0 30px}
+  .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .footer-col h4{color:#fff;font-size:16px;margin-bottom:16px}
+  .footer-col ul{list-style:none}
+  .footer-col li{margin-bottom:10px;font-size:14px}
+  .footer-col a{color:rgba(255,255,255,.75);font-size:14px}
+  .footer-col a:hover{color:var(--accent)}
+  .footer-logo{display:flex;align-items:center;gap:10px;color:#fff;font-weight:800;font-size:22px;font-family:'Poppins',sans-serif;margin-bottom:16px}
+  .footer-col.brand p{color:rgba(255,255,255,.65);font-size:14px;line-height:1.7}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,.1);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:14px;font-size:13px;color:rgba(255,255,255,.5)}
+  .footer-bottom a{color:rgba(255,255,255,.7);margin:0 10px}
+
+  /* MODAL */
+  .modal-overlay{position:fixed;inset:0;background:rgba(10,26,58,.6);backdrop-filter:blur(4px);z-index:200;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:opacity .25s}
+  .modal-overlay.open{display:flex;opacity:1}
+  .modal{background:#fff;border-radius:var(--radius);max-width:680px;width:100%;max-height:90vh;overflow-y:auto;box-shadow:var(--shadow-lg)}
+  .modal-header{padding:28px 32px;border-bottom:1px solid var(--border);position:sticky;top:0;background:#fff;border-radius:var(--radius) var(--radius) 0 0;display:flex;align-items:flex-start;justify-content:space-between;gap:16px}
+  .modal-header h2{font-size:22px;margin-bottom:6px}
+  .modal-cat{color:var(--primary);font-size:12px;font-weight:600;letter-spacing:.06em;text-transform:uppercase}
+  .modal-close{background:none;border:none;cursor:pointer;font-size:28px;line-height:1;color:var(--text-muted);padding:0;flex-shrink:0}
+  .modal-close:hover{color:var(--text)}
+  .modal-body{padding:24px 32px 32px}
+  .modal-body h3{font-size:15px;margin:18px 0 10px;color:var(--primary)}
+  .modal-body p, .modal-body li{font-size:14px;color:var(--text-muted);line-height:1.7}
+  .modal-body ul{padding-left:20px}
+  .modal-info{display:flex;gap:24px;margin-top:8px;flex-wrap:wrap;padding-bottom:18px;border-bottom:1px solid var(--border);margin-bottom:18px}
+  .modal-info div strong{display:block;font-size:11px;letter-spacing:.06em;text-transform:uppercase;color:var(--primary);margin-bottom:3px}
+  .modal-info div span{font-size:14px;color:var(--text)}
+  .modal-cta{margin-top:24px;display:flex;gap:12px;flex-wrap:wrap}
+
+  /* RESPONSIVE */
+  @media (max-width: 900px){
+    .nav-links{display:none}
+    .menu-toggle{display:block}
+    .hero-content{grid-template-columns:1fr}
+    .features{grid-template-columns:repeat(2,1fr)}
+    .courses{grid-template-columns:repeat(2,1fr)}
+    .about-grid{grid-template-columns:1fr}
+    .contact-grid{grid-template-columns:1fr}
+    .team-grid{grid-template-columns:1fr}
+    .steps{grid-template-columns:repeat(2,1fr)}
+    .footer-grid{grid-template-columns:1fr 1fr}
+    section{padding:60px 0}
+    .hero{padding:60px 0 80px}
+  }
+  @media (max-width: 560px){
+    .features, .courses{grid-template-columns:1fr}
+    .form-grid{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr}
+    .hero-text h1{font-size:32px}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+      <a href="#" class="logo" aria-label="Overtraining accueil">
+        <span class="logo-mark"><span>OT</span></span>
+        Overtraining
+      </a>
+      <ul class="nav-links">
+        <li><a href="#why">Pourquoi nous</a></li>
+        <li><a href="#formations">Formations</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#process">Notre approche</a></li>
+        <li><a href="#contact" class="nav-cta">Demander un devis</a></li>
+      </ul>
+      <button class="menu-toggle" aria-label="Menu">☰</button>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero" style="padding-top:80px">
+  <div class="hero-bg-pattern"></div>
+  <div class="container hero-content">
+    <div class="hero-text">
+      <h1>Des formations sur-mesure pour <span class="hl">faire grandir</span> vos équipes</h1>
+      <p>Overtraining est un organisme de formation certifié Qualiopi, avec plus de 20 ans d'expérience en management, communication, réparabilité, sécurité et bureautique. Nos formations sont 100 % alignées avec vos enjeux et vos valeurs.</p>
+      <div class="hero-actions">
+        <a href="#formations" class="btn btn-primary">Découvrir nos formations →</a>
+        <a href="#contact" class="btn btn-secondary">Demander un devis</a>
+      </div>
+      <div class="hero-badges">
+        <div class="hero-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M9 12l2 2 4-4"/><circle cx="12" cy="12" r="10"/></svg>
+          Certifié Qualiopi
+        </div>
+        <div class="hero-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg>
+          Finançable OPCO / CPF
+        </div>
+        <div class="hero-badge">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+          20+ années d'expérience
+        </div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <h3>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><path d="M22 4L12 14.01l-3-3"/></svg>
+        Overtraining en chiffres
+      </h3>
+      <div class="hero-stat"><span>Années d'expérience</span><strong>20+</strong></div>
+      <div class="hero-stat"><span>Formations au catalogue</span><strong>23</strong></div>
+      <div class="hero-stat"><span>Domaines d'expertise</span><strong>8</strong></div>
+      <div class="hero-stat"><span>Certification qualité</span><strong>Qualiopi</strong></div>
+      <div class="hero-stat"><span>Format</span><strong>Présentiel / Distanciel</strong></div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY US -->
+<section id="why">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Pourquoi Overtraining</span>
+      <h2>Un partenaire pour construire votre réussite</h2>
+      <p>Chez Overtraining, vous ne suivez pas seulement une formation : vous bénéficiez d'un accompagnement personnalisé pour faire monter en compétence vos équipes.</p>
+    </div>
+    <div class="features">
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M7 14l4-4 4 4 5-5"/></svg>
+        </div>
+        <h3>Contenu personnalisé</h3>
+        <p>Des programmes conçus sur-mesure, adaptés à vos besoins et objectifs spécifiques.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <h3>Formateurs experts</h3>
+        <p>Une équipe pédagogique compétente, expérimentée et passionnée par la transmission.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+        </div>
+        <h3>Pédagogie innovante</h3>
+        <p>Apprentissage interactif basé sur des cas pratiques réels et des mises en situation.</p>
+      </div>
+      <div class="feature">
+        <div class="feature-icon">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 11l-3 3-2-2"/></svg>
+        </div>
+        <h3>Suivi personnalisé</h3>
+        <p>Un accompagnement tout au long de votre parcours, du diagnostic à l'évaluation des acquis.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FORMATIONS -->
+<section id="formations">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Notre catalogue 2026</span>
+      <h2>Nos formations</h2>
+      <p>23 formations réparties en 8 domaines d'expertise — toutes personnalisables selon vos enjeux.</p>
+    </div>
+
+    <div class="category-filters" id="catFilters">
+      <button class="cat-btn active" data-cat="all">Toutes</button>
+      <button class="cat-btn" data-cat="mgt">Management</button>
+      <button class="cat-btn" data-cat="com">Communication & Vente</button>
+      <button class="cat-btn" data-cat="rep">Réparabilité</button>
+      <button class="cat-btn" data-cat="tech">Technique & Sécurité</button>
+      <button class="cat-btn" data-cat="bur">Bureautique</button>
+      <button class="cat-btn" data-cat="base">Savoirs de base</button>
+      <button class="cat-btn" data-cat="lng">Langues</button>
+    </div>
+
+    <div class="courses" id="coursesGrid">
+      <!-- Cards injected by JS -->
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-text">
+        <span class="section-eyebrow">À propos</span>
+        <h2>Notre histoire, votre montée en compétence</h2>
+        <p>Forts de plus de 20 années d'expérience dans la formation professionnelle et continue, nous mettons notre expertise et notre pédagogie innovante au service de votre développement.</p>
+        <p>Notre approche repose sur des cas pratiques et des mises en situation concrètes pour garantir une acquisition efficace des compétences nécessaires à votre développement ou à celui de vos équipes.</p>
+        <ul class="about-list">
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <div><strong>Formations 100 % sur-mesure</strong><span>Adaptées à votre contexte, vos enjeux et vos valeurs.</span></div>
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <div><strong>Présentiel ou distanciel</strong><span>Dans vos locaux, en salle dédiée ou à distance.</span></div>
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <div><strong>Engagement handicap</strong><span>Accessibilité et adaptation pour tous les apprenants.</span></div>
+          </li>
+          <li>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>
+            <div><strong>Catalogue numérique ou papier</strong><span>Disponible sur simple demande à overtraining@outlook.fr</span></div>
+          </li>
+        </ul>
+      </div>
+      <div class="qualiopi-card">
+        <span class="qualiopi-badge">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2l2.4 7.4H22l-6.2 4.5L18.2 22 12 17.3 5.8 22l2.4-8.1L2 9.4h7.6z"/></svg>
+          Certifié Qualiopi
+        </span>
+        <h3>La garantie d'un accompagnement de qualité</h3>
+        <p style="color:var(--text-muted);font-size:14px">Notre organisme est certifié Qualiopi, la marque de certification qualité délivrée par l'État dans le cadre du Référentiel National Qualité (RNQ).</p>
+        <ul class="qualiopi-list">
+          <li><svg class="check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Formations finançables par OPCO, France Travail, CPF</li>
+          <li><svg class="check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Accompagnement structuré avec objectifs clairs</li>
+          <li><svg class="check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Amélioration continue et transparence totale</li>
+          <li><svg class="check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Conformité aux exigences légales et réglementaires</li>
+          <li><svg class="check" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Évaluation des acquis et suivi pédagogique</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="margin-top:80px">
+      <div class="section-head">
+        <span class="section-eyebrow">Notre équipe</span>
+        <h2>Une équipe pédagogique expérimentée</h2>
+      </div>
+      <div class="team-grid">
+        <div class="team-card">
+          <div class="team-avatar">EP</div>
+          <h3>Éric PATIN</h3>
+          <div class="team-role">Gérant & Responsable pédagogique</div>
+          <p class="team-bio">Doctorat en Systèmes Thermiques et Énergétiques · Certification ENC en Management · Formateur en réparabilité, commerce, communication, gestion client et management.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">SN</div>
+          <h3>Sylvie NOGUEIRA</h3>
+          <div class="team-role">Formatrice experte</div>
+          <p class="team-bio">Communication, management et petite enfance. Une pédagogie axée sur la mise en situation et l'écoute active.</p>
+        </div>
+        <div class="team-card">
+          <div class="team-avatar">JJ</div>
+          <h3>Julien JOLY</h3>
+          <div class="team-role">Formateur technique</div>
+          <p class="team-bio">Électricité et électronique grand public. Ancien professionnel de la maintenance nucléaire.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section id="process">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Notre approche</span>
+      <h2>Comment se déroule une formation sur-mesure</h2>
+      <p>De l'entretien initial à l'évaluation des acquis, nous co-construisons chaque parcours avec vous.</p>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <div class="step-num">1</div>
+        <h3>Diagnostic</h3>
+        <p>Entretien pour définir thème, contexte et enjeux spécifiques de votre activité.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">2</div>
+        <h3>Conception</h3>
+        <p>Objectifs pédagogiques, méthodes (cas pratiques, mises en situation), durée et format.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">3</div>
+        <h3>Animation</h3>
+        <p>En présentiel chez vous ou en salle dédiée, ou à distance selon vos besoins.</p>
+      </div>
+      <div class="step">
+        <div class="step-num">4</div>
+        <h3>Évaluation & Suivi</h3>
+        <p>Évaluation des acquis, attestations et accompagnement post-formation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA BAND -->
+<section class="cta-band" style="padding:70px 0">
+  <div class="container">
+    <h2>Prêt à faire monter vos équipes en compétence ?</h2>
+<a href="#contact" class="btn btn-primary">Demander mon devis gratuit →</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-eyebrow">Contact</span>
+      <h2>Parlons de votre projet de formation</h2>
+      <p>Nous revenons vers vous sous 48h ouvrées.</p>
+    </div>
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Nous contacter</h3>
+        <p>Une question, un projet de formation, une demande de catalogue ? Notre équipe se tient à votre disposition.</p>
+        <ul class="contact-items">
+          <li>
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            </div>
+            <div>
+              <strong>Email</strong>
+              <a href="mailto:overtraining@outlook.fr">overtraining@outlook.fr</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            </div>
+            <div>
+              <strong>Téléphone</strong>
+              <a href="tel:+33608831506">06 08 83 15 06</a>
+            </div>
+          </li>
+          <li>
+            <div class="contact-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            </div>
+            <div>
+              <strong>Site</strong>
+              <span>www.overtraining.net</span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <form class="contact-form" id="contactForm" onsubmit="handleSubmit(event)">
+        <h3 style="margin-bottom:20px;font-size:20px">Demande de devis</h3>
+        <div class="form-grid">
+          <div class="form-group"><label for="fn">Prénom *</label><input id="fn" type="text" required></div>
+          <div class="form-group"><label for="ln">Nom *</label><input id="ln" type="text" required></div>
+          <div class="form-group full"><label for="em">Email professionnel *</label><input id="em" type="email" required></div>
+          <div class="form-group"><label for="co">Entreprise</label><input id="co" type="text"></div>
+          <div class="form-group"><label for="ph">Téléphone</label><input id="ph" type="tel"></div>
+          <div class="form-group full">
+            <label for="tr">Formation souhaitée</label>
+            <select id="tr">
+              <option>À déterminer ensemble</option>
+              <option>Management</option>
+              <option>Communication & Vente</option>
+              <option>Réparabilité</option>
+              <option>Technique & Sécurité</option>
+              <option>Bureautique</option>
+              <option>Savoirs de base / Lecture</option>
+              <option>Anglais</option>
+            </select>
+          </div>
+          <div class="form-group full">
+            <label for="ms">Votre besoin</label>
+            <textarea id="ms" placeholder="Décrivez en quelques mots votre projet, le public visé, le contexte..."></textarea>
+          </div>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Envoyer ma demande</button>
+        <p id="formStatus" style="margin-top:14px;font-size:13px;color:var(--text-muted);text-align:center"></p>
+      </form>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col brand">
+        <div class="footer-logo">
+          <span class="logo-mark" style="background:linear-gradient(135deg,#fff 0%,#e3e8f0 100%);color:var(--primary)"><span>OT</span></span>
+          Overtraining
+        </div>
+        <p>Organisme de formation certifié Qualiopi. Plus de 20 ans d'expertise au service de la montée en compétence des entreprises et des professionnels.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Domaines</h4>
+        <ul>
+          <li><a href="#formations">Management</a></li>
+          <li><a href="#formations">Communication</a></li>
+          <li><a href="#formations">Réparabilité</a></li>
+          <li><a href="#formations">Technique & Sécurité</a></li>
+          <li><a href="#formations">Bureautique</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Société</h4>
+        <ul>
+          <li><a href="#about">À propos</a></li>
+          <li><a href="#about">Notre équipe</a></li>
+          <li><a href="#about">Qualiopi</a></li>
+          <li><a href="#process">Notre approche</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li><a href="mailto:overtraining@outlook.fr">overtraining@outlook.fr</a></li>
+          <li><a href="tel:+33608831506">06 08 83 15 06</a></li>
+          <li>www.overtraining.net</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 Overtraining. Tous droits réservés.</div>
+      <div>
+        <a href="#">Mentions légales</a> · <a href="#">CGV</a> · <a href="#">Politique de confidentialité</a> · <a href="#">Accessibilité</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" onclick="event.stopPropagation()">
+    <div class="modal-header">
+      <div>
+        <span class="modal-cat" id="modalCat"></span>
+        <h2 id="modalTitle"></h2>
+      </div>
+      <button class="modal-close" onclick="closeModal()" aria-label="Fermer">×</button>
+    </div>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const courses = [
+  {id:1, cat:'mgt', catLabel:'Management', tag:'Posture', banner:'banner-mgt', initials:'MG', title:'Managers : Adopter une posture Premium',
+   desc:"Prendre conscience de l'impact de son comportement, incarner la vigilance sur l'image de marque.",
+   duree:'2 jours', public:'Managers, équipes en interaction quotidienne avec clients', prereq:'Aucun',
+   obj:["Prendre conscience de l'impact de son comportement","Soigner son apparence et son image de marque","S'enrichir des pratiques des autres participants"]},
+
+  {id:2, cat:'mgt', catLabel:'Management', tag:'Leadership', banner:'banner-mgt', initials:'MG', title:'Devenir un bon manageur',
+   desc:"Accompagner et faire grandir son équipe : structure, motivation, gestion des situations délicates.",
+   duree:'2 jours', public:'Managers, encadrants, référents', prereq:'Aucun',
+   obj:["Structurer son management et adapter sa communication","Motiver durablement les collaborateurs","Gérer les situations délicates"]},
+
+  {id:3, cat:'mgt', catLabel:'Management', tag:'Tutorat', banner:'banner-mgt', initials:'TU', title:'Être un bon tuteur',
+   desc:"Accompagner et faire grandir son apprenti — posture, parcours pédagogique, coopération école.",
+   duree:'2 jours', public:'Tuteurs, référents d\'alternants', prereq:'Aucun',
+   obj:["Identifier le rôle et la posture du tuteur","Construire un parcours pédagogique progressif","Coopérer avec l'école / centre de formation"]},
+
+  {id:4, cat:'mgt', catLabel:'Pédagogie', tag:'Formateur', banner:'banner-mgt', initials:'FO', title:'Devenir formateur',
+   desc:"Transmettre avec impact et professionnalisme : objectifs, animation, évaluation des acquis.",
+   duree:'À déterminer', public:'Futurs formateurs, formateurs internes, consultants', prereq:'Motivation et bienveillance',
+   obj:["Définir objectifs pédagogiques et progression","Maîtriser animation et régulation de groupe","Évaluer les acquis"]},
+
+  {id:5, cat:'com', catLabel:'Vente', tag:'Performance', banner:'banner-ven', initials:'VE', title:'Excellence Commerciale',
+   desc:"Les techniques de vente gagnantes : fondamentaux de la relation client, négociation et image pro.",
+   duree:'Sessions espacées', public:'Nouveaux vendeurs, commerciaux confirmés', prereq:'Motivation, lire et comprendre le français',
+   obj:["Maîtriser les fondamentaux de la relation client","Développer techniques de communication et négociation","Valoriser son image professionnelle"]},
+
+  {id:6, cat:'com', catLabel:'Gestion client', tag:'Litige', banner:'banner-com', initials:'LI', title:"Gestion d'un litige client",
+   desc:"Transformer un conflit en opportunité : désamorçage, langage assertif, fidélisation.",
+   duree:'2 jours', public:'Professionnels en contact client, hôtesses de caisse', prereq:'Aucun',
+   obj:["Désamorcer les tensions avec professionnalisme","Adopter un langage assertif et positif","Transformer une insatisfaction en fidélisation"]},
+
+  {id:7, cat:'com', catLabel:'Communication', tag:'Image pro', banner:'banner-com', initials:'RC', title:'Fondamentaux de la Relation Client',
+   desc:"Développez votre image de marque professionnelle : savoir-être, gestion du temps, leadership.",
+   duree:'2 jours', public:'Salariés, cadres, nouveaux arrivants', prereq:'Aucun',
+   obj:["Développer savoir-être et communication professionnelle","Maîtriser gestion du temps et leadership","S'adapter au changement"]},
+
+  {id:8, cat:'com', catLabel:'Communication', tag:'Prise de parole', banner:'banner-com', initials:'PP', title:'Réussir son oral et sa prise de parole',
+   desc:"Gagnez en aisance et en impact : structuration du discours, gestion du stress, communication non verbale.",
+   duree:'2 jours', public:'Managers, étudiants, enseignants, conférenciers', prereq:'Aucun',
+   obj:["Structurer un discours percutant","Gérer stress et émotions","Maîtriser communication verbale et non verbale"]},
+
+  {id:9, cat:'com', catLabel:'Communication', tag:"L'art de l'échange", banner:'banner-com', initials:'TC', title:'Techniques de Communication',
+   desc:"Maîtriser l'art de l'échange : écoute active, gestion de conflits, aisance à l'oral.",
+   duree:'2 jours', public:'Managers, professionnels en interaction client', prereq:'Aucun',
+   obj:["Acquérir une communication impactante","Développer écoute active et gestion de conflits","Gagner en aisance à l'oral"]},
+
+  {id:10, cat:'rep', catLabel:'Réparabilité', tag:'Électroménager', banner:'banner-rep', initials:'RE', title:'Réparabilité équipements électro-petit-ménager',
+   desc:"Diagnostic, maintenance et sensibilisation à l'économie circulaire sur les appareils portatifs.",
+   duree:'2 jours', public:'Techniciens SAV, réparateurs', prereq:'Aucun',
+   obj:["Diagnostiquer pannes courantes","Appliquer bonnes pratiques de maintenance","Sensibiliser à l'économie circulaire"]},
+
+  {id:11, cat:'rep', catLabel:'Réparabilité', tag:'Gros électro', banner:'banner-rep', initials:'EL', title:'Bases et techniques électroménager',
+   desc:"Acquérir les bases techniques sur les principaux appareils : lave-linge, four, réfrigérateur, TV.",
+   duree:'À déterminer', public:'Techniciens, professionnels SAV', prereq:'Aucun',
+   obj:["Acquérir les bases techniques","Maîtriser installation, configuration et mise en service","Diagnostiquer et entretenir"]},
+
+  {id:12, cat:'rep', catLabel:'Réparabilité', tag:'Audio-Vidéo', banner:'banner-rep', initials:'AV', title:'Bases et techniques Audio-Vidéo',
+   desc:"Comprendre, configurer et dépanner les systèmes AV — conseiller efficacement le client.",
+   duree:'2 jours', public:'Techniciens audiovisuel, vendeurs multimédia', prereq:'Aucun',
+   obj:["Comprendre les technologies audio et vidéo","Configurer et dépanner systèmes AV","Conseiller efficacement le client"]},
+
+  {id:13, cat:'tech', catLabel:'Technique', tag:'Chauffage', banner:'banner-tech', initials:'CH', title:'Confort thermique & moyens de chauffe',
+   desc:"Technologies de chauffage, installation, maintenance et optimisation de l'efficacité énergétique.",
+   duree:'À déterminer', public:'Installateurs, techniciens chauffage / climatisation', prereq:'Aucun',
+   obj:["Comprendre les technologies de chauffage","Maîtriser installation et maintenance","Optimiser l'efficacité énergétique"]},
+
+  {id:14, cat:'tech', catLabel:'Sécurité', tag:'TMS', banner:'banner-tech', initials:'GP', title:'Gestes et postures',
+   desc:"Prévenir les troubles musculosquelettiques : risques, mouvements sécurisés, ergonomie du poste.",
+   duree:'2 jours', public:'Travailleurs exposés à efforts physiques, responsables HSE', prereq:'Aucun',
+   obj:["Comprendre les risques posturaux","Adopter des mouvements sécurisés","Ajuster son poste de travail"]},
+
+  {id:15, cat:'tech', catLabel:'Sécurité', tag:'Habilitation', banner:'banner-tech', initials:'HE', title:'Habilitation Électrique BT / HT',
+   desc:"Sécurité des interventions sur installations électriques selon la norme NF C18-510.",
+   duree:'Variable selon niveau', public:'Intervenants sur installations électriques, encadrants', prereq:'Selon niveau visé (B0, H0, BR, BS...)',
+   obj:["Comprendre les risques électriques","Maîtriser procédures de consignation BT / HT","Réagir en cas d'accident (NF C18-510)"]},
+
+  {id:16, cat:'tech', catLabel:'Informatique', tag:'Réseaux', banner:'banner-tech', initials:'IR', title:'Informatique, réseaux et téléphonie',
+   desc:"Bases ordinateurs, réseaux, objets connectés et cybersécurité — installation, configuration, dépannage.",
+   duree:'2 jours', public:'Techniciens IT/télécom, utilisateurs avancés', prereq:'Aucun',
+   obj:["Comprendre ordinateurs, réseaux et objets connectés","Installer, configurer et dépanner","Maîtriser les bases de la cybersécurité"]},
+
+  {id:17, cat:'bur', catLabel:'Bureautique', tag:'Pack Office', banner:'banner-bur', initials:'OF', title:'Outils Microsoft Office',
+   desc:"Word, Excel et PowerPoint : créer des documents professionnels et améliorer sa productivité.",
+   duree:'2 jours', public:'Employés, étudiants, professionnels', prereq:'Aucun',
+   obj:["Maîtriser Word, Excel et PowerPoint","Créer documents professionnels","Améliorer sa productivité"]},
+
+  {id:18, cat:'bur', catLabel:'Bureautique', tag:'Word', banner:'banner-bur', initials:'W', title:'Microsoft Word 365',
+   desc:"Maîtrisez les fonctions essentielles : mise en forme, tableaux, images, révision collaborative.",
+   duree:'2 jours (14h)', public:'Tous publics, professionnels, étudiants', prereq:'Aucun',
+   obj:["Créer et mettre en forme des documents pro","Gérer tableaux, images et graphiques","Utiliser les outils de révision et collaboration"]},
+
+  {id:19, cat:'bur', catLabel:'Bureautique', tag:'Excel', banner:'banner-bur', initials:'X', title:'Microsoft Excel',
+   desc:"Boostez votre efficacité : fonctions avancées, tableaux croisés, graphiques complexes, macros.",
+   duree:'2 jours (14h)', public:'Professionnels, gestionnaires de données', prereq:'Aucun',
+   obj:["Maîtriser les fonctionnalités avancées d'Excel","Créer tableaux et graphiques complexes","Automatiser via macros"]},
+
+  {id:20, cat:'bur', catLabel:'Bureautique', tag:'PowerPoint', banner:'banner-bur', initials:'P', title:'Microsoft PowerPoint',
+   desc:"Créez des présentations percutantes : design, animations, captivez votre auditoire.",
+   duree:'2 jours (14h)', public:'Professionnels, enseignants, étudiants', prereq:'Aucun',
+   obj:["Créer des présentations professionnelles","Maîtriser fonctionnalités avancées et animations","Captiver l'auditoire"]},
+
+  {id:21, cat:'base', catLabel:'Savoirs de base', tag:'Lecture', banner:'banner-base', initials:'L1', title:"L'essentiel pour apprendre à lire",
+   desc:"Conscience phonologique, lecture syllabique et phonémique, compréhension de textes simples.",
+   duree:'Selon besoin', public:'Adultes apprenants, professionnels en compréhension écrite', prereq:'Aucun',
+   obj:["Acquérir la conscience phonologique","Maîtriser lecture syllabique et phonémique","Comprendre des textes professionnels simples"]},
+
+  {id:22, cat:'base', catLabel:'Savoirs de base', tag:'Lecture rapide', banner:'banner-base', initials:'L2', title:"L'essentiel pour s'appliquer à la lecture",
+   desc:"Améliorer la compréhension, l'analyse de texte et la vitesse de lecture.",
+   duree:'Selon besoin', public:'Professionnels en analyse documentaire, étudiants', prereq:'Aucun',
+   obj:["Améliorer compréhension et analyse de textes","Augmenter sa vitesse de lecture","Maîtriser la lecture rapide"]},
+
+  {id:23, cat:'lng', catLabel:'Langues', tag:'Anglais', banner:'banner-lng', initials:'EN', title:'Anglais professionnel',
+   desc:"Apprendre et améliorer sa compréhension et sa fluidité dans un contexte international.",
+   duree:'Selon besoin', public:'Tous publics, professionnels en contexte international', prereq:'Aucun',
+   obj:["Développer compréhension et analyse en anglais","Améliorer prise de parole et lecture","Acquérir des techniques d'assimilation"]},
+];
+
+const grid = document.getElementById('coursesGrid');
+
+function renderCourses(filter='all'){
+  grid.innerHTML = '';
+  const list = filter==='all' ? courses : courses.filter(c=>c.cat===filter);
+  list.forEach(c=>{
+    const card = document.createElement('article');
+    card.className = 'course';
+    card.innerHTML = `
+      <span class="course-tag">${c.tag}</span>
+      <div class="course-banner ${c.banner}">${c.initials}</div>
+      <div class="course-body">
+        <div class="course-cat">${c.catLabel}</div>
+        <h3>${c.title}</h3>
+        <p class="course-desc">${c.desc}</p>
+        <div class="course-meta">
+          <span class="meta-pill">⏱ ${c.duree}</span>
+          <span class="meta-pill">📋 ${c.prereq}</span>
+        </div>
+        <button class="course-link" onclick="openModal(${c.id})">Voir le programme →</button>
+      </div>`;
+    grid.appendChild(card);
+  });
+}
+
+document.getElementById('catFilters').addEventListener('click', e=>{
+  if(e.target.matches('.cat-btn')){
+    document.querySelectorAll('.cat-btn').forEach(b=>b.classList.remove('active'));
+    e.target.classList.add('active');
+    renderCourses(e.target.dataset.cat);
+  }
+});
+
+function openModal(id){
+  const c = courses.find(x=>x.id===id);
+  if(!c) return;
+  document.getElementById('modalCat').textContent = c.catLabel;
+  document.getElementById('modalTitle').textContent = c.title;
+  document.getElementById('modalBody').innerHTML = `
+    <div class="modal-info">
+      <div><strong>Durée</strong><span>${c.duree}</span></div>
+      <div><strong>Public</strong><span>${c.public}</span></div>
+      <div><strong>Prérequis</strong><span>${c.prereq}</span></div>
+    </div>
+    <p>${c.desc}</p>
+    <h3>Objectifs pédagogiques</h3>
+    <ul>${c.obj.map(o=>`<li>${o}</li>`).join('')}</ul>
+    <h3>Méthodes pédagogiques</h3>
+    <p>Apports théoriques, cas pratiques, mises en situation, échanges et évaluation continue des acquis.</p>
+    <h3>Certification & financement</h3>
+    <p>Formation certifiée Qualiopi, finançable par OPCO, France Travail et CPF. Une attestation de fin de formation est remise à chaque stagiaire.</p>
+    <div class="modal-cta">
+      <a href="#contact" class="btn btn-primary" onclick="closeModal()">Demander un devis</a>
+      <a href="mailto:overtraining@outlook.fr?subject=Demande%20d'information%20-%20${encodeURIComponent(c.title)}" class="btn btn-outline">Nous contacter</a>
+    </div>`;
+  document.getElementById('modalOverlay').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal(e){
+  if(e && e.target.id !== 'modalOverlay' && e.type === 'click') return;
+  document.getElementById('modalOverlay').classList.remove('open');
+  document.body.style.overflow = '';
+}
+
+document.addEventListener('keydown', e=>{ if(e.key==='Escape') closeModal(); });
+
+function handleSubmit(e){
+  e.preventDefault();
+  const status = document.getElementById('formStatus');
+  status.style.color = '#0d8a4f';
+  status.textContent = '✓ Merci ! Votre demande a été enregistrée. Nous revenons vers vous sous 48h ouvrées.';
+  document.getElementById('contactForm').reset();
+}
+
+// Init
+renderCourses();
+
+// Mobile menu (simple toggle)
+const menuBtn = document.querySelector('.menu-toggle');
+const navLinks = document.querySelector('.nav-links');
+menuBtn && menuBtn.addEventListener('click', ()=>{
+  navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+  navLinks.style.flexDirection = 'column';
+  navLinks.style.position = 'absolute';
+  navLinks.style.top = '64px';
+  navLinks.style.right = '24px';
+  navLinks.style.background = '#fff';
+  navLinks.style.padding = '20px';
+  navLinks.style.borderRadius = '12px';
+  navLinks.style.boxShadow = 'var(--shadow-md)';
+});
+</script>
+</body>
+</html>
